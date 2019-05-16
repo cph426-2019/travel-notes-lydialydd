@@ -96,4 +96,7 @@ a:hover {
 .navigate {
     border: 1px solid #fff;  /* For debugging */
     width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
