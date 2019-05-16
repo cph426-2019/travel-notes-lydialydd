@@ -66,8 +66,8 @@ ol {
  img {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 60px;
+    padding-right: 60px;
     box-sizing: border-box; 
  }
  * {
@@ -82,4 +82,17 @@ a:hover {
 
 .floater {
     float: right;
+}
+
+.navigate-container {
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: rgb(20, 128, 61);  /* Blue */
+    padding: 20px 0;
+}
+  
+.navigate {
+    border: 1px solid #fff;  /* For debugging */
+    width: 300px;
 }
