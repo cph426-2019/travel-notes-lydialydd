@@ -79,3 +79,7 @@ a:hover {
     color: green;
     text-decoration: underline;
 }
+
+.floater {
+    float: left;
+}
