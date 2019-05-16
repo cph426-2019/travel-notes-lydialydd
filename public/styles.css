@@ -26,7 +26,7 @@ p {
 ol {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 120 px;
+    padding-left: 1600 px;
     padding-right: 100px;
 }
  ul {
@@ -39,6 +39,6 @@ ol {
  img {
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: 100px;
+    padding-right: 100px;
  }
