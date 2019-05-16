@@ -9,6 +9,8 @@ h1 {
     padding-left: 100px;
     padding-right: 100px;
     font-size: 2em;
+    padding: 50px;
+    border: 1px solid #5D6063;
 }
 h2 {
     padding-top: 10px;
