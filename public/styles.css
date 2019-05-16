@@ -86,9 +86,9 @@ a:hover {
 
 .navigate-container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     color: #fff;
-    background-color: rgb(20, 128, 61);  /* Blue */
+    background-color: rgb(238, 153, 153);  /* Blue */
     padding: 20px 0;
 }
   
