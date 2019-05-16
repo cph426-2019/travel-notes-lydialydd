@@ -24,19 +24,22 @@ p {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 100px;
-    padding-right: 100px;     
+    padding-right: 100px;    
+    margin-bottom: 30px; 
 }
 ol {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 120px;
     padding-right: 100px;
+    margin-bottom: 10px;
 }
  ul {
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 120px;
     padding-right: 100px;
+    margin-bottom: 10px;
  }
 
  img {
@@ -45,3 +48,8 @@ ol {
     padding-left: 100px;
     padding-right: 100px;
  }
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
