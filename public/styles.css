@@ -75,7 +75,7 @@ ol {
     padding: 0;
     box-sizing: border-box;
 }
-.list:hover {
+a:hover {
     color: green;
     text-decoration: underline;
 }
