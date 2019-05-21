@@ -1,9 +1,13 @@
 body {
     color: #414141; /* Dark gray */
     background-color: #EEEEEE; /* Light gray */
-    font-size: 18px;
+    font-size: 19px;
     box-sizing: border-box; 
     font-family: 'Raleway', sans-serif;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "kern";
+    letter-spacing: 0.10em
+     
 }
 h1 {
     padding-top: 10px;
@@ -20,7 +24,7 @@ h1 {
 
 
 .big-title {
-    font-size: 50px;
+    font-size: 25px;
 }
 
 .page strong {
