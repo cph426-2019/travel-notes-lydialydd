@@ -3,6 +3,7 @@ body {
     background-color: #EEEEEE; /* Light gray */
     font-size: 18px;
     box-sizing: border-box; 
+    font-family: 'Raleway', sans-serif;
 }
 h1 {
     padding-top: 10px;
@@ -15,6 +16,8 @@ h1 {
     /* margin: 20px auto;
     width: 200px; */
 }
+
+
 
 .big-title {
     font-size: 50px;
