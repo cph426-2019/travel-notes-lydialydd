@@ -9,7 +9,7 @@
         text-rendering: optimizeLegibility;
         font-feature-settings: "kern";
         letter-spacing: 0.10em;
-        width: 33.3%;
+        width: 100%;
         
     }
     .page {
@@ -45,7 +45,7 @@
         color: rgb(207, 30, 39)
     }
     .page {
-        width: 600px;
+        width: 1000px;
         margin: 0 auto;
     }
     h2 {
