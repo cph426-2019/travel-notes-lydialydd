@@ -31,7 +31,7 @@
         .body { 
             width: 100%; 
             color: #414141; /* Dark gray */
-            background-color: #EEEEEE; /* Light gray */
+            background-color: rgb(204, 53, 53); /* Light gray */
             font-size: 19px;
             box-sizing: border-box;
         }
