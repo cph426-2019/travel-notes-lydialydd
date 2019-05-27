@@ -14,13 +14,14 @@
   "keywords": [
     "initialize"
   ],
-  "author": "lydialyd",
+  "author": "lydialydd",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/cph426-2019/travel-notes-lydialydd/issues"
   },
   "homepage": "https://github.com/cph426-2019/travel-notes-lydialydd#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.4.5"
   }
 }
