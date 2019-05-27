@@ -3,14 +3,13 @@
     body {
         color: #414141; /* Dark gray */
         background-color: #EEEEEE; /* Light gray */
-        font-size: 19px;
+        font-size: 18px;
         box-sizing: border-box; 
         font-family: 'Raleway', sans-serif;
         text-rendering: optimizeLegibility;
         font-feature-settings: "kern";
         letter-spacing: 0.10em;
         width: 100%;
-        
     }
     .header {
         width: 960px;
@@ -43,6 +42,9 @@
             justify-content: center;
             align-items: center;
         }
+        p {
+            text-indent: 50px;
+        }
     }
 
     h1 {
@@ -74,6 +76,7 @@
     p {
         /* padding-top: 10px;
         padding-bottom: 10px; */
+        text-indent: 50px;
         padding-left: 100px;
         padding-right: 100px;    
         margin-bottom: 30px; 
