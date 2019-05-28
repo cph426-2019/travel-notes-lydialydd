@@ -170,4 +170,7 @@
         max-height: 78vh;
         max-width: 98vw;
     }
+    .gallery__caption {
+        text-align: center;
+    }
 }

@@ -14,7 +14,8 @@ let main = () => {
 
 type Image = {
     src: string,
-    thumbSrc: string
+    thumbSrc: string,
+    caption: string,
 }
 
 type GalleryProps = {
@@ -48,6 +49,12 @@ class Gallery extends React.Component<GalleryProps, GalleryState> {
                         src={this.state.selected.src} />
                 </div>
             </div>
+            {/* <div className="gallery__caption"> {
+                this.props.images.map((image)) => {
+                    return < image.caption onSelect ={(image)}
+                }
+            }
+            </div> */}
         </div>;
     }
 
