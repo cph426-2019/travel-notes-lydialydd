@@ -1,8 +1,20 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    color: #414141; /* Dark gray */
+    font-family: 'Raleway', sans-serif;
+    /* text-rendering: optimizeLegibility;
+    font-feature-settings: "kern"; */
+    /* letter-spacing: 0.10em; */
+}
+
 /* Desktop Styles */
 @media only screen and (min-width: 961px) {
     body {
         color: #414141; /* Dark gray */
-        background-color: #EEEEEE; /* Light gray */
+        background-color: rgb(165, 163, 163); 
         font-size: 18px;
         box-sizing: border-box; 
         font-family: 'Raleway', sans-serif;
@@ -29,8 +41,8 @@
     @media only screen and (max-width: 400px) {
         body { 
             width: 100%;
-            color: #414141; /* Dark gray */
-            background-color: #EEEEEE; /* Light gray */
+            color: #414141; 
+            background-color: #EEEEEE; 
             font-size: 19px;
             box-sizing: border-box;
         } 
@@ -46,7 +58,6 @@
             text-indent: 50px;
         }
     }
-
     h1 {
         padding-top: 10px;
         padding-bottom: 10px;
@@ -58,24 +69,16 @@
     .big-title {
         font-size: 25px;
     }
-    .page strong {
-        color: rgb(207, 30, 39)
-    }
     .page {
         width: 1000px;
         margin: 0 auto;
     }
     h2, h3 {
-        /* padding-top: 10px;
-        padding-bottom: 10px; */
         padding-left: 100px;
         padding-right: 100px;
-         margin: 0 auto;
-        /* font-size: 1em; */
+        margin: 0 auto;
     }
     p {
-        /* padding-top: 10px;
-        padding-bottom: 10px; */
         text-indent: 50px;
         padding-left: 100px;
         padding-right: 100px;    
@@ -98,34 +101,73 @@
         margin-bottom: 10px;
         box-sizing: border-box; 
     }
-    
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+
     a:hover {
         color: purple;
-        text-decoration: underline;
+        text-decoration: none;
     }
 
     .floater {
         float: right;
     }
-    .navigate-container {
+     .navigate-container {
         display: flex;
         justify-content: space-around;
-        color: #fff;
-        background-color: #EEEEEE; /* Light gray */;  
-        padding: 10px 0;
-        flex-direction: row;
-        height: 80px;
     } 
-    .navigate {
-        border: 1px solid #fff;  /* For debugging */
-        width: 300px;
+
+    
+    .gallery__master {
+        list-style: none;
+        font-size: 0.75em;
         display: flex;
-        justify-content: space-around;
-        flex-direction: row;
+        overflow-x: auto;
+        height: 20vh;
+    }
+    
+    .gallery__thumb {
+        height: 20vh;
+        margin-right: 1em;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .gallery__thumb.selected .gallery__thumb-img-wrap {
+        border: 2px solid #333;
+    }
+    
+    .gallery__thumb:hover {
+        cursor: pointer;
+    }
+    
+    .gallery__thumb-img-wrap {
+        display: block;
+        border: 2px solid black;
+        width: 19vh;
+        height: 19vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .gallery__thumb-img {
+        max-width: 19vh;
+        max-height: 19vh;
+        vertical-align: middle;
+        text-align: center;
+    }
+    
+    .gallery__detail-img-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 78vh;
+    }
+    
+    .gallery__detail-img {
+        margin-top: 2vh;
+        max-height: 78vh;
+        max-width: 98vw;
     }
 }
