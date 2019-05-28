@@ -173,4 +173,7 @@
     .gallery__caption {
         text-align: center;
     }
+    .gallery__thumb.selected .gallery__thumb-img-wrap {
+        background: #C60C30;
+    }
 }
