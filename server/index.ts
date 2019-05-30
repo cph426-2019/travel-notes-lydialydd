@@ -12,6 +12,18 @@ app.engine("hbs", exphbs({
     defaultLayout: "default",
     extname: "hbs",
 }));
-app.get("/", (req, res) => {
-    res.render("index");
+app.get("/index", (req, res) => {
+    res.render("index", {title: "Home"});
+});
+
+app.get("/gallery", (req, res) => {
+    res.render("gallery", {title: "Photos"});
+});
+
+app.get("/bucket-list", (req, res) => {
+    res.render("bucket-list", {title: "Bucket List"});
+});
+
+app.get("/about-me", (req, res) => {
+    res.render("about-me", {title: "About Lyd"});
 });
