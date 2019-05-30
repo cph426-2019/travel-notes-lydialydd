@@ -110,20 +110,6 @@ a:hover {
     justify-content: space-around;
 } 
 
-a:hover {
-    color: purple;
-    text-decoration: none;
-}
-
-.floater {
-    float: right;
-}
-    .navigate-container {
-    display: flex;
-    justify-content: space-around;
-} 
-
-
 .gallery__master {
     list-style: none;
     font-size: 0.75em;
