@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/cph426-2019/travel-notes-lydialydd#readme",
   "devDependencies": {
-    "@types/react": "^16.8.18",
+    "@types/react": "^16.8.19",
     "@types/react-dom": "^16.8.4",
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.3",
