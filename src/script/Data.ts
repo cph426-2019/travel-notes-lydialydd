@@ -10,6 +10,11 @@ export default [
         "caption": "PC: Selina",
     },
     {
+        "thumbSrc": "./img/sparkles-thumb.jpg",
+        "src": "./img/sparkles.jpg",
+        "caption": "PC: Selina",
+    },
+    {
         "thumbSrc": "./img/glowWorld-thumb.jpg",
         "src": "./img/glowWorld.jpg",
         "caption": "PC: Selina",
