@@ -8,7 +8,7 @@
       "start": "ts-node server/index.ts",
       "build": "parcel build client/{*.css,gallery.tsx,main.ts}",
       "prod": "git pull && npm install && npm run build && sudo npm run start",
-      "deploy": "ssh -i ~/.ssh/COMP426.pem ubuntu@18.223.151.247 'sudo service blog-app restart"
+      "deploy": "ssh blog 'sudo service blog-app restart' "
   },
   "repository": {
     "type": "git",

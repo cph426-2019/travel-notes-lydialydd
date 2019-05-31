@@ -2,7 +2,9 @@ import * as express from "express";
 import * as exphbs from "express-handlebars";
 let app = express();
 app.use(express.static("dist/"));
-app.listen(1234, () => console.log("Listening on 1234"))
+
+const PORT = process.env.NODE_ENV === "production" ? 80 : 1234;
+app.listen(1234, () => console.log(`Listening on ${PORT}`))
    .on("error", (e) => console.error(e));
 
 
@@ -12,7 +14,7 @@ app.engine("hbs", exphbs({
     defaultLayout: "default",
     extname: "hbs",
 }));
-app.get("/index", (req, res) => {
+app.get("/", (req, res) => {
     res.render("index", {title: "Home"});
 });
 
