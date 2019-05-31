@@ -5,7 +5,7 @@ export default [
         "caption": "Just some casual yoga fun",
     },
     {
-        "thumbSrc": "./img/lydTakepic-thumb.jpg",
+        "thumbSrc": "./img/lydTakepic2-thumb.jpg",
         "src": "./img/lydTakepic.jpg",
         "caption": "PC: Selina",
     },
