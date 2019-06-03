@@ -191,11 +191,9 @@ a:hover {
     .page {
         width: 1000px;
     }
-
-    /* .navigater {
-        padding-left: 50px;
-        padding-right: 50px;
-    } */
+    h1 {
+        font-size: 2em;
+    }
     .navigate-container {    
         width: 100%;
         padding-top: 30px;
