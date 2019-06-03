@@ -23,21 +23,19 @@ app.get("/index", (req, res) => {
     res.render("index", {title: "Home"});
 });
 
+// app.get("/todos.json", async (req, res) => {
+//     let [rows, fields] = await DB.query<Rows>("SELECT * FROM todos");
+//     res.json(rows);
+// });
 
-app.get("/todos.json", async (req, res) => {
-    let [rows, fields] = await DB.query<Rows>("SELECT * FROM todos");
-    res.json(rows);
-});
-
-app.get("/todos", async (req, res) => {
+app.get("/bucket-list", async (req, res) => {
     let [rows] = await DB.query<Rows>("SELECT * FROM todos");
-    res.render("todos-demo", {todos: rows});
-    
+    res.render("bucket-list", {todos: rows, title: "Bucket List"});
 });
 
 
 // how you can click on diff blog posts in diff pages when added to database
-app.get("/todos/:id", async (req, res) => {
+app.get("/bucket-list/:id", async (req, res) => {
     let [rows] = await DB.query<Rows>("SELECT * FROM todos WHERE id = :id", {id: req.params.id});
     res.json(rows);
 });
@@ -47,9 +45,9 @@ app.get("/gallery", (req, res) => {
     res.render("gallery", {title: "Photos"});
 });
 
-app.get("/bucket-list", (req, res) => {
-    res.render("bucket-list", {title: "Bucket List"});
-});
+// app.get("/bucket-list", (req, res) => {
+//     res.render("bucket-list", {title: "Bucket List"});
+// });
 
 app.get("/about-me", (req, res) => {
     res.render("about-me", {title: "About Lyd"});
