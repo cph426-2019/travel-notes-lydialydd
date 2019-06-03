@@ -93,7 +93,7 @@ a:hover {
 }
 
 .floater {
-    float: right;
+    float: center;
 }
 
 .navigater {
@@ -208,6 +208,9 @@ a:hover {
         align-items: center;
     }
     
+    .floater {
+        float:right;
+    }
 
     .home {
         padding-left: 50px;
