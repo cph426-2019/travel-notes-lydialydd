@@ -1,11 +1,11 @@
 import * as express from "express";
 import * as exphbs from "express-handlebars";
+import * as dotenv from "dotenv";
+dotenv.configure();
+
+
 let app = express();
 app.use(express.static("dist/"));
-
-const PORT = process.env.NODE_ENV === "production" ? 80 : 1234;
-app.listen(1234, () => console.log(`Listening on ${PORT}`))
-   .on("error", (e) => console.error(e));
 
 
 app.set("view engine", "hbs");
@@ -33,3 +33,10 @@ app.get("/bucket-list", (req, res) => {
 app.get("/about-me", (req, res) => {
     res.render("about-me", {title: "About Lyd"});
 });
+
+export let main = async () => {
+    app.listen(process.env.PORT, () => console.log(`Listening on ${process.env.PORT}`))
+   .on("error", (e) => console.error(e));
+};
+
+main(); 
