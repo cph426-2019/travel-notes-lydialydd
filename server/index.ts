@@ -15,12 +15,14 @@ app.engine("hbs", exphbs({
     defaultLayout: "default",
     extname: "hbs",
 }));
-app.get("/", (req, res) => {
-    res.render("index", {title: "Home"});
+app.get("/", async (req, res) => {
+    let [rows] = await DB.query<Rows>("SELECT * FROM posts ORDER BY publishAt DESC");
+    res.render("index", {todos: rows, title: "Blog Posts"});
 });
 
-app.get("/index", (req, res) => {
-    res.render("index", {title: "Home"});
+app.get("/index", async (req, res) => {
+    let [rows] = await DB.query<Rows>("SELECT * FROM posts ORDER BY publishAt DESC");
+    res.render("index", {posts: rows, title: "Blog Posts"});
 });
 
 // app.get("/todos.json", async (req, res) => {
