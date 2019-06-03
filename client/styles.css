@@ -120,9 +120,7 @@ a:hover {
 }
 
 /* Gallery hereeeeeeeeee */
-.gallery_container {
 
-}
 .gallery__master {
     list-style: none;
     font-size: 0.75em;
@@ -179,7 +177,9 @@ a:hover {
 }
 .gallery__caption {
     text-align: center;
-    padding-top: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.5em;
 }
 .gallery__thumb.selected .gallery__thumb-img-wrap {
     background: rgb(132, 132, 141);
@@ -221,5 +221,10 @@ a:hover {
     .home {
         padding-left: 50px;
         padding-right: 50px;
+    }
+    .gallery__caption {
+        padding-top: 15px;
+        padding-bottom:15px;
+        font-size: 1.5em;
     }
 }
