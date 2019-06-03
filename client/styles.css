@@ -177,7 +177,7 @@ a:hover {
 }
 .gallery__caption {
     text-align: center;
-    padding-top: 0px;
+    padding-top: 10px;
     padding-bottom: 30px;
     font-size: 1.5em;
 }
