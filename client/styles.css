@@ -196,7 +196,14 @@ a:hover {
     h1 {
         font-size: 2em;
     }
-    
+
+    h2, h3, h4, p, ul, ol {
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
     .bucket {
         font-size:2.2em;
     }
