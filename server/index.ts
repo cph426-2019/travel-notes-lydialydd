@@ -1,7 +1,7 @@
 import * as express from "express";
 import * as exphbs from "express-handlebars";
 import * as dotenv from "dotenv";
-dotenv.configure();
+dotenv.config();
 
 
 let app = express();
