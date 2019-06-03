@@ -199,11 +199,15 @@ a:hover {
         padding-left: 50px;
     }
 
-    h2, h3, h4, p, ul, ol {
+    h2, h3, h4, p {
         padding-right: 50px;
         padding-left: 50px;
     }
 
+    ul, ol {
+        padding-right: 70px;
+        padding-left: 70px;
+    }
     .bucket {
         font-size:2.2em;
         padding-right: 50px;
