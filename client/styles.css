@@ -17,7 +17,6 @@
 .content {
     width: 100%;
     height: 100%; /* important!!! was only 300 px??*/
-    
     justify-content: center;
     align-items: center;
 }
@@ -121,6 +120,9 @@ a:hover {
 }
 
 /* Gallery hereeeeeeeeee */
+.gallery_container {
+
+}
 .gallery__master {
     list-style: none;
     font-size: 0.75em;
