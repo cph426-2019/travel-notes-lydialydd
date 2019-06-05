@@ -4,10 +4,11 @@ dotenv.config();
 import * as express from "express";
 import * as exphbs from "express-handlebars";
 import { DB, Rows } from "./db";
+import admin from "./admin";
 
 let app = express();
 app.use(express.static("dist/"));
-
+app.use(express.urlencoded({extended:true}));
 
 app.set("view engine", "hbs");
 app.set("views", "server/views");
@@ -54,6 +55,8 @@ app.get("/gallery", (req, res) => {
 app.get("/about-me", (req, res) => {
     res.render("about-me", {title: "About Lyd"});
 });
+
+app.use("/admin", admin);
 
 export let main = async () => {
     app.listen(process.env.PORT, () => console.log(`Listening on ${process.env.PORT}`))
