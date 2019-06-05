@@ -1,5 +1,7 @@
 import * as express from "express";
 import {DB, Rows, InsertResult} from "./db";
+import * as bcrypt from "bcrypt";
+import * as cookieParser from "cookie-parser";
 
 let path = (req: express.Request): string => {
     return `${req.baseUrl}${req.path}`;
@@ -7,10 +9,50 @@ let path = (req: express.Request): string => {
 
 let router = express.Router();
 
+// cookie parser will read and write secure cookies
+// that are protected by our cookie secret
+router.use(cookieParser(process.env.COOKIE_SECRET));
+
 router.get("/", (req, res) => {
     res.render("admin/index", {
         layout: "admin"
     });
+});
+
+// Login form
+router.get("/login", (req, res) => {
+    res.render("admin/login", {
+        layout: "admin",
+        message: req.query.message
+    });
+});
+// test password validity
+router.post("/login", async (req, res) => {
+    let isValid = await bcrypt.compare(req.body.password, process.env.ADMIN_PASSWORD_HASH);
+    if (isValid) {
+        res.cookie("authenticated", "true", {
+            signed: true // by using the signed option, our cookie is secure
+        });
+        res.redirect(`${req.baseUrl}`); // redirect to admin home page
+    } else {
+        res.redirect(`${req.baseUrl}/login?message=Password Incorrect`);
+    }
+});
+
+// logout
+router.get("/logout", (req, res) => {
+    res.clearCookie("authenticated");
+    res.redirect(`${req.baseUrl}/login`);
+});
+
+// middleware to authenticate the user 
+// to make sure they login before going to any other admmin pages
+router.use((req, res, next) => {
+    if(req.signedCookies.authenticated) {
+        next();
+    } else {
+        return res.redirect(`${req.baseUrl}/login`);
+    }
 });
 
 // listing all todos
