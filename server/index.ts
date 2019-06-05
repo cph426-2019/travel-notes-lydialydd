@@ -18,7 +18,7 @@ app.engine("hbs", exphbs({
 }));
 app.get("/", async (req, res) => {
     let [rows] = await DB.query<Rows>("SELECT * FROM posts ORDER BY publishAt DESC");
-    res.render("index", {todos: rows, title: "Blog Posts"});
+    res.render("index", {posts: rows, title: "Blog Posts"});
 });
 
 app.get("/index", async (req, res) => {
