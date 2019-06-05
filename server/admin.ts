@@ -163,4 +163,117 @@ router.post("/todos/:id/delete", async (req, res) => {
     }
 });
 
+// listing all posts
+router.get("/posts", async (req, res) => {
+    let [rows] = await DB.query<Rows>("SELECT * FROM posts ORDER BY publishAt DESC");
+    res.render("admin/posts/index", {
+        posts: rows,
+        layout: "admin"
+    });
+});
+
+// defining this route above posts/:id to ensure it gets tested by the router logic 1st
+router.get("/posts/new", (req, res) => {
+    res.render("admin/posts/editor", {
+        action: `${req.baseUrl}/posts`,
+        layout: "admin",
+        post: {
+            title: "",
+            body: "",
+            publishAt: ""
+        },
+    });
+});
+
+// the route  for creating a new post is just '/posts' bc the HTTP spec
+// says when u create a new resource, it should be subordinate 
+// to the URL u posted your data to
+router.post("/posts", async (req, res) => {
+    try {
+        // use mySQL workbench to generate this sql w specific vals
+        //replace specific vals w placeholders prefixed by :
+        let sql = `INSERT INTO posts
+                    (title, body, publishAt)
+                    VALUES
+                    (:title, :body, :publishAt)`;
+        let params = {
+            title: req.body.title,
+            body: req.body.body,
+            publishAt: req.body.publishAt
+        };
+        if( req.body.title === "") {
+            res.redirect(path(req) + "/new?message=Invalid Description");
+            return;
+        }
+        // creating a new record in the DB is special bc we 
+        // need to know the id that the DB assigned to our new record
+        let [result] = await DB.execute<InsertResult>(sql, params);
+        res.redirect(`${path(req)}/${result.insertId}?message=Saved!`);
+    } catch(e) {
+        console.error(e);
+        res.redirect(`${path(req)}?message=Error Saving`);
+    }
+});
+
+
+// view the editor of an existing todo
+router.get("/posts/:id", async (req, res) => {
+    let sql = "SELECT * FROM posts WHERE id=:id";
+    let params = { id: req.params.id };
+    try {
+        let [rows] = await DB.query<Rows>(sql, params);
+        if (rows.length === 1) {
+            res.render("admin/posts/editor", {
+                post: rows[0],
+                action: path(req),
+                layout: "admin",
+                message: req.query.message
+            });
+        } else {
+            res.redirect(`${path(req)}/../`);
+        }
+    } catch (e) {
+        console.error(e);
+        res.redirect(`${path(req)}/../`);
+    }
+});
+
+router.post("/posts/:id", async (req, res) => {
+    try {
+        // use mySQL workbench to generate this sql w specific vals
+        //replace specific vals w placeholders prefixed by :
+        let sql = `UPDATE posts     
+                   SET title=:title, 
+                       body=:body,
+                       publishAt=:publishAt 
+                   WHERE id=:id`;
+        let params = {
+            id: req.params.id,
+            title: req.body.title,
+            body: req.body.body,
+            publishAt: req.body.publishAt
+        };
+        await DB.execute<Rows>(sql, params);
+        res.redirect(`${path(req)}?message=Saved!`);
+    } catch(e) {
+        console.error(e);
+        res.redirect(`${path(req)}?message=Error Saving`);
+    }
+});
+
+// add delete support 
+router.post("/posts/:id/delete", async (req, res) => {
+    let sql = "DELETE FROM posts WHERE id=:id";
+    let params = {
+        id:req.params.id
+    };
+    try {
+        await DB.execute<Rows>(sql, params);
+        res.redirect(`${path(req)}/../../`);
+    } catch(e) {
+        console.error(e);
+        res.redirect(`${path(req)}/../../`);
+    }
+});
+
 export default router;
