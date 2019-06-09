@@ -29,6 +29,9 @@ router.get("/login", (req, res) => {
 // test password validity
 router.post("/login", async (req, res) => {
     let isValid = await bcrypt.compare(req.body.password, process.env.ADMIN_PASSWORD_HASH);
+    if (!isValid) {
+        isValid = await bcrypt.compare(req.body.password, process.env.ADMIN_PASSWORD_HASH2);
+    }
     if (isValid) {
         res.cookie("authenticated", "true", {
             signed: true // by using the signed option, our cookie is secure
